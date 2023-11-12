@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Project to PyPI Tutorial</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Python Project to PyPI Tutorial</h1>
+
+    <ol>
+        <li><strong>Clone Git Repository:</strong>
+            <pre><code>git clone https://github.com/your_username/your_project.git<br>cd your_project</code></pre>
+        </li>
+
+        <li><strong>Write Your Python Code:</strong> Add your Python code files to the project.</li>
+
+        <li><strong>Create <code>__init__.py</code> File:</strong> Make sure to create an empty <code>__init__.py</code>
+            file in each package directory.</li>
+
+        <li><strong>Create Your Python Project Structure:</strong> Organize your project with packages and modules, and
+            make sure to have a proper directory structure.</li>
+
+        <li><strong>Install Wheel:</strong> <code>pip install wheel</code></li>
+
+        <li><strong>Create <code>setup.py</code> File:</strong>
+            <pre><code>from setuptools import setup, find_packages
+
+setup(
+    name='your_lib_name',
+    version='0.1.0',
+    packages=find_packages(),
+    install_requires=[
+        # List your dependencies here
+    ],
+)</code></pre>
+        </li>
+
+        <li><strong>Create Source Distribution and Wheel:</strong>
+            <code>python setup.py sdist bdist_wheel</code></li>
+
+        <li><strong>Install Twine:</strong> <code>pip install twine</code></li>
+
+        <li><strong>Create PyPI Account:</strong> Go to <a href="https://pypi.org/">PyPI</a> and create an account if you
+            don't have one.</li>
+
+        <li><strong>Generate PyPI Token:</strong> Go to your PyPI account settings, create an API token, and copy it.
+        </li>
+
+        <li><strong>Upload to PyPI Using Twine:</strong>
+            <pre><code>twine upload --username __token__ --password &lt;your_token&gt; dist/*</code></pre>
+        </li>
+        
+        <li><strong>Install Your Library:</strong> <code>pip install your_lib_name</code></li>
+    </ol>
+
+</body>
+
+</html>
